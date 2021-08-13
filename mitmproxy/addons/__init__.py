@@ -22,6 +22,7 @@ from mitmproxy.addons import stickycookie
 from mitmproxy.addons import streambodies
 from mitmproxy.addons import save
 from mitmproxy.addons import upstream_auth
+from mitmproxy.addons import auto_play_flows
 
 
 def default_addons():
@@ -50,4 +51,5 @@ def default_addons():
         streambodies.StreamBodies(),
         save.Save(),
         upstream_auth.UpstreamAuth(),
+        auto_play_flows.AutoPlayFlows()
     ]

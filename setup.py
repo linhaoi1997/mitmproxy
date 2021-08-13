@@ -18,32 +18,19 @@ with open(os.path.join(here, "mitmproxy", "version.py")) as f:
     VERSION = match.group(1)
 
 setup(
-    name="mitmproxy",
+    name="mitmproxy_lin_customization",
     version=VERSION,
-    description="An interactive, SSL/TLS-capable intercepting proxy for HTTP/1, HTTP/2, and WebSockets.",
+    description="基于mitmproxy，根据自己的使用习惯定制的内容，加入接口花费时间排序，按照定义规则自动跑接口造数据，graphqlview的功能",
     long_description=long_description,
     url="http://mitmproxy.org",
-    author="Aldo Cortesi",
-    author_email="aldo@corte.si",
-    license="MIT",
+    author="Lin",
+    author_email="hao.lin@teletraan.io",
     classifiers=[
-        "License :: OSI Approved :: MIT License",
-        "Development Status :: 5 - Production/Stable",
-        "Environment :: Console :: Curses",
-        "Operating System :: MacOS",
-        "Operating System :: POSIX",
-        "Operating System :: Microsoft :: Windows",
         "Programming Language :: Python :: 3 :: Only",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: Implementation :: CPython",
-        "Topic :: Security",
-        "Topic :: Internet :: WWW/HTTP",
-        "Topic :: Internet :: Proxy Servers",
-        "Topic :: System :: Networking :: Monitoring",
-        "Topic :: Software Development :: Testing",
-        "Typing :: Typed",
     ],
     packages=find_packages(include=[
         "mitmproxy", "mitmproxy.*",
@@ -85,6 +72,7 @@ setup(
         "wsproto>=0.14,<0.16",
         "publicsuffix2>=2.20190812,<3",
         "zstandard>=0.11,<0.14",
+        "beeprint>=2.4.10"
     ],
     extras_require={
         ':sys_platform == "win32"': [

@@ -112,6 +112,16 @@ class OrderKeySize(_OrderKey):
         else:
             raise NotImplementedError()
 
+class OrderCostTime(_OrderKey):
+    def generate(self, f: mitmproxy.http.HTTPFlow) -> float:
+        if hasattr(f, "response"):
+            if f.response:
+                ctx.log(f.response.timestamp_end - f.timestamp_start)
+                return f.response.timestamp_end - f.timestamp_start
+            else:
+                return 0
+        else:
+            return 0
 
 matchall = flowfilter.parse("~http | ~tcp")
 
@@ -135,6 +145,7 @@ class View(collections.abc.Sequence):
         self.orders = dict(
             time = OrderRequestStart(self), method = OrderRequestMethod(self),
             url = OrderRequestURL(self), size = OrderKeySize(self),
+            cost_time=OrderCostTime(self)
         )
         self.order_key = self.default_order
         self.order_reversed = False

@@ -193,3 +193,4 @@ def map(km):
         ["keybindings"],
         "Edit the currently focused key binding"
     )
+    km.add("R", "console.command replay.auto_replay @focus", ["global"], "Set intercept")
