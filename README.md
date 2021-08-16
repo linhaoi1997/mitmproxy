@@ -1,5 +1,11 @@
-### 记录下用到的mitmproxy插件
+##Install
+基于mitmproxy稳定版本5.2，python3.8
+其他版本可能会出现中文解码失败的情况
 
+`pip install mitmproxy-lin-customization`
+``
+
+## 修改内容
 ### 修改mitmproxy源码以加入接口响应时间的排序
 实际测试中需要查看接口的响应时间看看是否时间很长，mitmproxy的原生时间排序是根据
 发送时间进行排序
