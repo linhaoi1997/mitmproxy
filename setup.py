@@ -19,7 +19,7 @@ with open(os.path.join(here, "mitmproxy", "version.py")) as f:
 
 setup(
     name="mitmproxy_lin_customization",
-    version=VERSION,
+    version="5.2.1",
     description="基于mitmproxy，根据自己的使用习惯定制的内容，加入接口花费时间排序，按照定义规则自动跑接口造数据，graphqlview的功能",
     long_description=long_description,
     url="http://mitmproxy.org",

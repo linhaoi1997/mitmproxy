@@ -2,7 +2,8 @@
 def map(km):
     km.add(":", "console.command ", ["commonkey", "global"], "Command prompt")
     km.add("?", "console.view.help", ["global"], "View help")
-    km.add("B", "browser.start", ["global"], "Start an attached browser")
+    # km.add("B", "browser.start", ["global"], "Start an attached browser")
+    km.add("B", "console.command cut.save @focus response.content ./result.json", ["global"], "save file to result.json")
     km.add("C", "console.view.commands", ["global"], "View commands")
     km.add("K", "console.view.keybindings", ["global"], "View key bindings")
     km.add("O", "console.view.options", ["commonkey", "global"], "View options")
